@@ -259,7 +259,7 @@ public class EmailService {
         MimeMessage message = mailSender.createMimeMessage();
         message.addRecipient(MimeMessage.RecipientType.TO, new InternetAddress(recipientEmail));
         message.setSubject("Event Invitation: " + eventTitle);
-        message.setFrom(new InternetAddress("noreply@yourdomain.com", "Event Organizer"));
+        message.setFrom(new InternetAddress("noreply@finsurge.ai", "Event Organizer"));
 
         // Build calendar invite content
         String calendarContent = buildICSContent(eventTitle, description, startTime, endTime, recipientEmail);
@@ -306,7 +306,7 @@ public class EmailService {
                 "SUMMARY:" + eventTitle + "\n" +
                 "DESCRIPTION:" + description + "\n" +
                 "LOCATION:Online\n" +
-                "ORGANIZER;CN=Event Organizer:mailto:noreply@yourdomain.com\n" +
+                "ORGANIZER;CN=Event Organizer:mailto:noreply@finsurge.ai\n" +
                 "ATTENDEE;RSVP=TRUE;CN=" + attendee + ":mailto:" + attendee + "\n" +
                 "STATUS:CONFIRMED\n" +
                 "SEQUENCE:0\n" +
